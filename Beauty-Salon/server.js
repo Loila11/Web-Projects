@@ -2,7 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const uuidv1 = require('uuid');
+const uuidv1 = require('uuid/v1');
 const fs = require("fs");
 const app = express();
 
