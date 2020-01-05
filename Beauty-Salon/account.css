@@ -1,0 +1,274 @@
+
+/* [ABOUT] */
+.main-about {
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify;
+}
+
+/* [PRICES] */
+.main-prices {
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.service-area {
+    width: 30%;
+    margin: 10px;
+    border: 0.5px dashed var(--main-txt-color);
+}
+
+.service-title {
+    padding: 0px 20px 0px 20px;
+}
+
+.service-price {
+    padding: 0px 20px 0px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+    .service-area {
+        width: 300px;
+        margin: 20px;
+    }
+}
+
+@media (max-width: 790px) {
+    .main-prices {
+        justify-content: center;
+    }
+}
+
+/* [APPOINTMENTS] */
+.main-appointments {
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* [DATE] */
+.cal-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cal-mth, .cal-yr {
+    padding-right: 20px;
+    color: var(--main-txt-color);
+}
+
+/* [CALENDAR] */
+.calendar {
+    width: 800px;
+    border-collapse: collapse;
+}
+
+.calendar tr.head td {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--main-txt-color);
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.calendar tr.day td {
+    border: 1px solid #ddd;
+    width: 14.28%;
+    padding: 15px 5px;
+    vertical-align: top;
+}
+  
+.calendar tr.day td:not(.blank) {
+    background: #f5f5f5;
+}
+  
+.calendar tr.day td:hover:not(.blank) {
+    background: #fff9e4;
+}
+  
+.calendar .dd {
+    font-size: 1.2em;
+    color: #999;
+}
+
+.calendar .evt {
+    margin-top: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+/* [BUTTONS] */
+.cal-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 800px;
+}
+
+.cal-previous, .cal-next {
+    width: 40%;
+    margin-top: 20px;
+    font-size: 1em;
+    border: 0;
+    background: var(--main-txt-color);
+    color: #fff;
+}
+
+@media (max-width: 1000px) {
+    .calendar, .cal-buttons {
+        width: 100%;
+    }
+    .main-appointments {
+        display: initial;
+    }
+}
+
+/* [EVENT] */
+.cal-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+}
+
+.event-title {
+    margin: 0;
+}
+
+[for="service"], [for="details"] {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+[for="hour"] {
+    padding-top: 10px;
+}
+
+/* [ACCOUNT] */
+.main-account {
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.appointment-box {
+    width: 45%;
+    margin: 10px;
+    border: 0.5px dashed var(--main-txt-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.appointment-header {
+    padding: 0px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-button {
+    height: 30px;
+}
+
+.detail-box {
+    padding: 0px 20px 0px 20px;
+}
+
+.time {
+    padding: 0px 20px 0px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 560px) {
+    .appointment-box {
+        width: 100%;
+    }
+}
+
+/* [REGISTER & LOGIN] */
+.main-login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify;
+}
+
+.login-button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.register-login {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    margin: 10px;
+}
+
+[for="name"], [for="email"], [for="number"], [for="password"], [for="hour"] {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+input {
+    border-radius: 3px;
+    border: 0.5px solid var(--other-txt-color);
+    padding: 5px;
+}
+
+.register-login input {
+    width: 300px;
+}
+
+.register-login .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submit {
+    width: 300px;
+    margin-top: 15px;
+    background-color: var(--main-txt-color);
+    color: #FAE5D3;
+    border-radius: 5px;
+    border: 0.5px solid var(--main-txt-color);
+    padding: 5px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 350px) {
+    input, select {
+        width: 100%;
+    }
+    .submit {
+        width: 10rem;
+    }
+}

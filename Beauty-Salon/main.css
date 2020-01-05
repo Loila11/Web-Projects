@@ -1,0 +1,118 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+  --main-txt-color: #803224;
+  --other-txt-color: #330000;
+  --margin-height: 100px;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background: url("https://static.vecteezy.com/system/resources/previews/000/190/601/original/watercolour-texture-background-vector.jpg");
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* [HEADER] */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 10px 20px 10px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: var(--margin-height);
+    border-bottom: 0.5px dashed var(--main-txt-color);
+}
+
+#logo {
+    height: 100%;
+}
+
+#user-info {
+    text-align: end;
+    color: var(--other-txt-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+#user-name {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+/* [NAV] */
+nav {
+    padding-top: var(--margin-height);
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 0.5px dashed var(--main-txt-color);
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Lato;
+    font-size: 14px;
+}
+
+/* [MAIN] */
+#page-body {
+    padding-top: 10px;
+    padding-bottom: var(--margin-height);
+}
+
+/* [FOOTER] */
+footer {
+    padding-top: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: var(--margin-height);
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: var(--other-txt-color);
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+i {
+    margin: 10px;
+}
+
+.footer {
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 700px) {
+    .contact-info {
+        width: 200px;
+        margin: 10px;
+    }
+}
