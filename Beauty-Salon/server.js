@@ -11,11 +11,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post("/users", (req, res) => {
-    const userList = readUsers();
+    const userList = readJSONFile();
     const newUser = req.body;
     newUser.id = uuidv1();
     userList.push(newUser);
-    writeUsers(userList);
+    writeJSONFile(userList);
     res.json(newUser);
 });
 
@@ -40,7 +40,7 @@ app.get("/users/:id", (req, res) => {
 });
 
 app.get("/users", (req, res) => {
-    const userList = readUsers();
+    const userList = readJSONFile();
     res.json(userList);
 });
 
@@ -69,24 +69,24 @@ app.put("/users/:id", (req, res) => {
     }
 });
 
-function readUsers() {
+app.delete("/users/:id", (req, res) => {
+    const userList = readJSONFile();
+    const id = req.params.id;
+    const newUserList = userList.filter((user) => user.id != id);
+
+    if (userList.length !== newUserList.length) {
+        res.status(200).send('User ${id} was removed');
+        writeJSONFile(newUserList);
+    } else {
+        res.status(404).send('User ${id} was not found');
+    }
+});
+
+function readJSONFile() {
     return JSON.parse(fs.readFileSync("login.json"))["users"];
 }
 
 function writeJSONFile(content) {
-    fs.writeFileSync(
-        "db.json",
-        JSON.stringify({users: content}),
-        "utf8",
-        err => {
-            if (err) {
-                console.log(err);
-            }
-        }
-    );
-}
-
-function writeUsers(content) {
     fs.writeFileSync(
         "login.json",
         JSON.stringify({users: content}),
