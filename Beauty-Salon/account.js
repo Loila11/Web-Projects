@@ -72,7 +72,7 @@ function deleteAppointment(user, index) {
 
     user.appointments.splice(index, 1);
 
-    fetch(`http://localhost:3000/users/${currentUserId}`, {
+    fetch(`http://localhost:3000/users/${user.id}`, {
         method: 'PUT',
         headers: {
             "Content-type": "application/json"
@@ -86,7 +86,7 @@ function deleteAppointment(user, index) {
 function addAppointment(user, appointment) {
     user.appointments.push(appointment);
 
-    fetch(`http://localhost:3000/users/${currentUserId}`, {
+    fetch(`http://localhost:3000/users/${user.id}`, {
         method: 'PUT',
         headers: {
             "Content-type": "application/json"

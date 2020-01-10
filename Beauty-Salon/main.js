@@ -152,6 +152,21 @@ function fillUserInfo() {
                 logoutButton.id = "logout";
                 logoutButton.textContent = nav.logout;
                 document.getElementById("user-info").appendChild(logoutButton);
+
+                var deleteButton = document.createElement("button");
+                deleteButton.addEventListener("click", function() {
+                    fetch(`http://localhost:3000/users/${users[currentUserId].id}`, {
+                            method: 'DELETE',
+                        }).then(function () {
+                            fillAbout();
+                        });
+                    currentUserId = null;
+                    document.getElementById("user-info").innerHTML = "";
+                    fillAbout();
+                });
+                deleteButton.id = "delete";
+                deleteButton.textContent = nav.delete;
+                document.getElementById("user-info").appendChild(deleteButton);
             });
         });
     }

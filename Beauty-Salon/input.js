@@ -42,7 +42,6 @@ var daysInfo = [{
         "openingHour": 9,
         "closingHour": 14
     }];
-// daca e ecranul prea mic pastrez primele 3 litere din nume
 var services = [{
     "name": "Coafor",
     "details": [{
@@ -134,6 +133,7 @@ var login = {
 var nav = {
     logo_url: "logo.jpg",
     logout: "Deconectare",
+    delete: "Stergeti contul",
     prices: "Preturi",
     account: "Contul meu",
     appointments: "Programari",
